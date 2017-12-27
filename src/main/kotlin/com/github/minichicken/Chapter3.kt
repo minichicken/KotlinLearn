@@ -1,6 +1,6 @@
 package com.github.minichicken
 
-/*
+
 val list = listOf(1,2,3)
 fun <T> joinToString(collection: Collection<T>, separator: String, prefix: String, postfix: String): String{
     val result = StringBuilder(prefix)
@@ -31,7 +31,12 @@ class Button: View(){
     }
 }
 
-val String.lastChar: Char get() = get(length -1)
+var String.lastChar: Char
+    get() = get(length -1)
+    set(value: Char) {
+        println(this.plus(value))
+    }
+
 
 var StringBuilder.lastChar: Char
     get() = get(length -1)
@@ -40,13 +45,19 @@ var StringBuilder.lastChar: Char
     }
 
 fun main(args: Array<String>){
+    val list = listOf("args: ", *args)
+    println(list)
     //println(joinToString(list, ";", "(", ")"))
     //println(joinToString(list, separator = ";", prefix = "(", postfix = ")"))
     //println("hello world".lastChar())
+    println("abcde".substring(1))
     val view: View = Button()
     view.click()
+    val temp: String = "hello"
+    temp.lastChar = 'e'
+    println(temp)
     val text = StringBuilder("Dd")
     text.lastChar = '2'
     println(text.lastChar)
     println("hello hell?".lastChar)
-}*/
+}
