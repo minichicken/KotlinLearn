@@ -7,6 +7,7 @@ fun main(args: Array<String>){
     val soeemed = Triple(2,3,4)
     val soem = arrayOf("ff", "ff" , "fds")
     println(soem[2])
+    val clazz = String::class.java
 }
 
 data class Result(val result: Int, val status: Int, val some: Int, val fuck: Int, val shit: Int)
