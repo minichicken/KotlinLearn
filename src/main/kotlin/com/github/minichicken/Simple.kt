@@ -2,7 +2,11 @@ package com.github.minichicken
 
 import java.util.*
 
-data class Persion(val name: String, val age:Int)
+/**
+ *
+ */
+
+data class Persion(val name: String?, val age: Int?)
 
 fun main(args: Array<String>) {
     val rand = Random()
@@ -14,12 +18,14 @@ fun main(args: Array<String>) {
             Persion("hello", 13),
             Persion("hello1", 11),
             Persion("hello2", 12),
-            Persion("hello", 14),
+            Persion(null, null),
             Persion("hello", 15),
             Persion("hello5", 155)
     )
-    println(people)
 
+
+    println(people.elementAt(3))
+    println(people)
     println(people.sortedBy { it.name })
     println(people.sortedWith(compareBy(Persion::name, Persion::age)))
     println(people.sortedWith(compareBy ({ it.name }, {it.age})))
